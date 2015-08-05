@@ -11,4 +11,4 @@ sed "s|'./'|'./library/'|" < config_local.php.example > config_local.php
 cd ../..
 tar -cvf cops.tar home
 cd ..
-docker build -t dockercops:latest .
+docker build -t docker-cops:latest .

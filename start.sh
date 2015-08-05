@@ -9,7 +9,7 @@ else
 fi
 
 # to run it daemonized
-#docker run -d -v "$1":/home/cops/library -p "$2":8080 --rm dockercops
+#docker run -d -v "$1":/home/cops/library -p "$2":8080 --rm docker-cops
 
 # to run it in interactive mode
-docker run -i -t -v "$1":/home/cops/library -p "$2":8080 --rm dockercops
+docker run -i -t -v "$1":/home/cops/library -p "$2":8080 --rm docker-cops

@@ -7,7 +7,7 @@ If you want to run a lightweight web interface for a calibre library you can use
 * git
 * docker (>=1.7)
 
-To build the docker image execute `./build.sh`. This will generate an image with name *dockercops*.
+To build the docker image execute `./build.sh`. This will generate an image with name *docker-cops*.
 
 Suppose you have a calibre library located at /opt/library and want to serve it on port 5000:
 
