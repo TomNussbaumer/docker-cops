@@ -17,4 +17,5 @@ Suppose you have a calibre library located at /opt/library and want to serve it 
 
 **NOTE 2:** Actually the produced image is quite large, because the used base image (php:5.6.11) contains the complete build environment of php including its source. With some cleanup and a final collapsing of the image stack it should be possible to get the size from 480MB down to ~200MB.
 
-
+**NOTE 3:** For the purpose of this demo start.sh starts the cops system in interactive mode. Press Ctrl+C to abort it (the container will automatically removed).
+ 
