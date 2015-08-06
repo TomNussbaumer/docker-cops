@@ -27,7 +27,7 @@ if [ -z "$1" -o -z "$2" ]; then
   echo ""
   echo "starts an instance of COPS serving the library on the given port."
   echo "If '--daemon' is given, the instance starts in daemon mode."
-  echo "For simple security (basic authenication) set USER and PASSWD."
+  echo "For simple security (basic authentication) set USER and PASSWD."
   echo ""
   echo "test library => $TESTLIB"
   echo ""
