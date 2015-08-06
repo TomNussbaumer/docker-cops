@@ -21,6 +21,8 @@
 # enough to work with most containers.  There are probably other errors as
 # as well, as docker history is an in-precise way to learn the original
 # docker commands.
+#
+# see: https://github.com/docbill/docker-scripts
 
 if [ -z "$1" -o -z "$2" ]
 then
