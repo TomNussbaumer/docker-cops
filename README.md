@@ -43,16 +43,21 @@ Suppose you have a calibre library located at /opt/library and want to serve it 
 
 `./start.sh /opt/library 5000`
 
+The builtin usage info reads:
+
+```
+USAGE: ./start.sh PATH-TO-LIBRARY PORT-TO_USE [USER] [PASSWD] [--daemon]
+
+starts an instance of COPS serving the library on the given port.
+If '--daemon' is given, the instance starts in daemon mode.
+For simple security (basic authentication) set USER and PASSWD.
+```
+
 ## Notes:
 
 1. Running `./start.sh` shows the usage info.
-2. *start.sh* requires an absolute path to your library.
-3. The base image is quite large, because it contains the complete build environment of php including its sources. The build process performs some really, really (sic!) dirty cleanup and image stack collapsing to get the final result size from 480MB down to 224MB.
+2. The base image is quite large, because it contains the complete build environment of php including its sources. The build process performs some really, really (sic!) dirty cleanup and image stack collapsing to get the final result size from 480MB down to 224MB.
 4. For the purpose of this demo *start.sh* starts the container in interactive mode. Press Ctrl+C to abort it (the container will be automatically removed afterwards). To run it in daemon mode append *--daemon* to the commandline call.
-
-## TODO:
-
-1. Add configurable basic authentication to the demo so it can be used out-of-the-box to serve real content. 
 
 ## Additionally (not yet mentioned) resources used in this project
 
