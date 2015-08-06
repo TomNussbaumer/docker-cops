@@ -33,7 +33,8 @@ Note that **this demo is not a tutorial**. It just presents a working example wh
 
 *Prerequisites:*
 
-1. *git*
+1. *a system with bash installed*
+2. *git*
 2. *docker (>=1.7)*
 3. *internet access for the build step*
 
