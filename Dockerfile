@@ -54,6 +54,10 @@ WORKDIR /home/cops
 
 #------------------------------------------------------------------
 # use php's builtin webserver to run the cops system
+#
+# NOTE: by using the exec variant of CMD we make sure that the
+#       php executable is PID 1 and get all signals from the
+#       docker daemon 
 #------------------------------------------------------------------
 EXPOSE 8080
-CMD php -S 0.0.0.0:8080
+CMD ["php", "-S", "0.0.0.0:8080"]
