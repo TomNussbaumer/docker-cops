@@ -27,7 +27,7 @@
 ABSPATH_SCRIPT=$(readlink -f ${BASH_SOURCE[0]})
 ABSPATH_DIR=$(dirname "$ABSPATH_SCRIPT")
 
-if [ -z "$1" -o -z "$2" ]; then
+if [ -z "$1" ] || [ -z "$2" ]; then
   TESTLIB="$ABSPATH_DIR"/tmp/test-library
   TESTLIB=${TESTLIB// /\\ }
   echo "USAGE: $0 PATH-TO-LIBRARY PORT-TO_USE [USER] [PASSWD] [--daemon]" 1>&2
@@ -46,7 +46,7 @@ echo "PATH-TO-LIBRARY      = '$1'"
 echo "ABSPATH-TO-LIBRARY   = '$CALIBRE_LIB'"
 echo "PORT-TO-USE          = '$2'"
 
-[ "$3" = "--daemon" -o "$5" = "--daemon" ]
+[ "$3" = "--daemon" ] || [ "$5" = "--daemon" ]
 DAEMON_MODE=$?
 
 CALIBRE_LIB=${CALIBRE_LIB// /\\ }
@@ -58,7 +58,7 @@ CMDLINE="docker run -v $CALIBRE_LIB:/home/cops/library -p $2:8080"
 # NOTE: the tricky part here is to get it right when username or password
 #       contains spaces. Simply using quotes won't work as expected.
 #------------------------------------------------------------------------------
-if [ -n "$3" -a -n "$4" ]; then
+if [ -n "$3" ] && [ -n "$4" ]; then
   ESC_USER=${3// /\\ }
   ESC_PWD=${4// /\\ }
   CMDLINE="$CMDLINE -e BASICAUTH_USERNAME=$ESC_USER -e BASICAUTH_PASSWORD=$ESC_PWD"
