@@ -24,6 +24,10 @@
 #
 # see: https://github.com/docbill/docker-scripts
 
+# debugging only
+# set -e
+# set -x
+
 if [ -z "$1" -o -z "$2" ]
 then
   echo "$0 CONTAINER REPOSITORY[:TAG]" 1>&2
@@ -53,7 +57,7 @@ then
   fi
   # Inspect the existing image to create a Dockerfile
   (
-    echo "From $from"
+    echo "From $(echo $from |  cut -c1-12)"     ## FIX for a bug in docker 1.8
     (
       docker history --no-trunc "$imageId" | \
       sed -n -e 's,.*/bin/sh -c #(nop) \(MAINTAINER .*[^ ]\) *0 B,\1,p' | \
